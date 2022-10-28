@@ -23,7 +23,7 @@ int main(){
     if(pilihan==1)
         hasil=bil1+bil2;
     else if(pilihan==2)
-        hasil=bil1+bil2;
+        hasil=bil1-bil2;
     else if(pilihan==3)
         hasil=bil1*bil2;
     else if((pilihan==4)||(pilihan==5)){

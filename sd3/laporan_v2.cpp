@@ -61,17 +61,17 @@ int main(){
         if(kar.golongan == 1){
             kar.upah = 30000;
             if(kar.jmlJK > 8){
-                kar.upah += 3000;
+                kar.upah += (kar.jmlJK - 8)*3000;
             }
         } else if(kar.golongan == 2){
             kar.upah = 40000;
             if(kar.jmlJK > 8){
-                kar.upah += 4000;
+                kar.upah += (kar.jmlJK - 8)*4000;
             }
         } else if(kar.golongan == 3){
             kar.upah = 50000;
             if(kar.jmlJK > 8){
-                kar.upah += 5000;
+                kar.upah += (kar.jmlJK - 8)*5000;
             }
         }
 
@@ -104,10 +104,12 @@ int main(){
     // menampilkan karyawan dengan nilai tertinggi dan terendah
     cout<<"\n\nKaryawan dengan Upah tertinggi.\n";
     cout<<"Nama: "<<karMax.nama<<endl;
+    cout<<"Golongan: "<<karMax.golongan<<endl;
     cout<<"Upah: "<<karMax.upah<<endl;
 
     cout<<"\nKaryawan dengan Upah terendah.\n";
     cout<<"Nama: "<<karMin.nama<<endl;
+     cout<<"Golongan: "<<karMin.golongan<<endl;
     cout<<"Upah: "<<karMin.upah<<endl;
 
     cin.get();

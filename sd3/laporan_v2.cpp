@@ -27,6 +27,7 @@ void gol(){
 int i = 1;
 char lanjut;
 bool n = true;
+int total = 0;
 
 // fungsi lanjut mengisi karyawan
 void lanjutngk(){
@@ -74,6 +75,9 @@ int main(){
                 kar.upah += (kar.jmlJK - 8)*5000;
             }
         }
+        
+        //penjumlahan total upah
+        total += kar.upah;
 
         // penentuan upah tertinggi dan terendah
         if(kar.upah > karMax.upah){
@@ -111,6 +115,8 @@ int main(){
     cout<<"Nama: "<<karMin.nama<<endl;
      cout<<"Golongan: "<<karMin.golongan<<endl;
     cout<<"Upah: "<<karMin.upah<<endl;
+    
+    cout<<"\nTotal upah yang dibagikan ke semua karyawan: "<<total;
 
     cin.get();
     return 0;

@@ -38,7 +38,7 @@ void lanjutngk(){
         n = false;
     } else{
         cout<<"PERINGATAN!!\n Inputan yang anda masukkan salah.\n";
-        cout<<"Data berhasil dimasukkan.\nIngin mengisih data lagi? [y/t]: "; cin>>lanjut;
+        cout<<"Pilih pilihan yang benar.\nIngin mengisi data lagi? [y/t]: "; cin>>lanjut;
         lanjutngk();
     }
 }
@@ -97,7 +97,7 @@ int main(){
         }
 
         // Pemilihan masih mau isi data atau tidak
-        cout<<"== Data berhasil dimasukkan!\n\nIngin mengisih data lagi? [y/t]: "; cin>>lanjut;
+        cout<<"== Data berhasil dimasukkan!\n\nIngin mengisi data lagi? [y/t]: "; cin>>lanjut;
         lanjutngk();
     }
 

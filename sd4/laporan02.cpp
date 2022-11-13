@@ -21,8 +21,8 @@ Alur Program
 - Hasil perhitungan Tottal pembayawan ditampilkan pada setiap data yang siinput.
 - Setelah penginputan berakhir, lakukan rekapitulasi (diluar loop penginputan data pelanggan) terhadap data pelanggan untuk memperoleh output berikut:
     - Jumlah pelanggan untuk masing-masing golongan meter.
-    - Total jumlah pemakaian pada stiap golongan meter.
-    - Data pelanggan (cetak No. Rekening, nama, Jumlah Pemakaian,) dengan jumlah pemakaian pada rentan 10 s/d 50, dan hitung Grand Total pembayarannya.
+    - Total jumlah pemakaian pada setiap golongan meter.
+    - Data pelanggan (cetak No. Rekening, nama, Jumlah Pemakaian) dengan jumlah pemakaian pada rentan 10 s/d 50, dan hitung Grand Total pembayarannya.
 */
 
 
@@ -63,7 +63,7 @@ void inputGolmet(int index){
 void inputNPM(int index){
     cout<<"Masukkan Nilai Penunjukan Meter Awal\t: "; cin>>npmAwal[index];          // Memasukkan nilai penunjuk meter awal
     cout<<"Masukkan Nilai Penunjukan Meter Akhir\t: "; cin>>npmAkhir[index];        // Memasukkan nilai penunjuk meter akhir
-    if(npmAkhir < npmAwal){                                                         // Apabila inputan npmAkhir lebih kecil dari npmAwal
+    if(npmAkhir[index] < npmAwal[index]){                                           // Apabila inputan npmAkhir lebih kecil dari npmAwal
         cout<<"PERINGATAN!!! Pastikan anda mengisi Nilai Penunjukan Akhir lebih besar dari Nilai Penunjukan Awal.\n";
         inputNPM(index);
     }
@@ -107,6 +107,17 @@ void inputData(){
 
 //fungsi menampilkan data
 void displayData(int index){
+    cout<<"\n\n===== Jumlah Pelanggan Masing-masing Golongan Meter =====\n\n";
+    cout<<"Jumlah Pelanggan Golongan A\t\t: "<<jmlPelA<<endl;                       // Menampilkan Jumlah Pelanggan Golongan A
+    cout<<"Jumlah Pelanggan Golongan B\t\t: "<<jmlPelB<<endl;                       // Menampilkan Jumlah Pelanggan Golongan B
+    cout<<"Jumlah Pelanggan Golongan C\t\t: "<<jmlPelC<<endl;                       // Menampilkan Jumlah Pelanggan Golongan C
+
+    cout<<"\n\n========== Total Jumlah Pemakaian Tiap Golongan ==========\n\n";
+    cout<<"Total Jumlah Pemakaian Golongan A\t: "<<tjpA<<endl;                      // Menampilkan Total Jumlah Pemakaian Golongan A
+    cout<<"Total Jumlah Pemakaian Golongan B\t: "<<tjpB<<endl;                      // Menampilkan Total Jumlah Pemakaian Golongan B
+    cout<<"Total Jumlah Pemakaian Golongan C\t: "<<tjpC<<endl;                      // Menampilkan Total Jumlah Pemakaian Golongan C
+
+
     cout<<"\n\n========= Data Pelanggan Dengan Pemakaian 10 -50 =========\n\n";
     while(j <= index){                                                              // Perulangan selama j masih lebih kecil atau sama dengan nilai indexnya
         if(jmlPemakai[j] > 10 && jmlPemakai[j] < 50){                               // Penyeleksian untuk jumlah pemakaian di rentan 10 s/d 50
@@ -136,5 +147,5 @@ int main(){
 /*
 1. Masih ada yang salah dengan Logikanya. Total Pembayaran tidak tanpil.            ==> Done
 2. Buat fungsi menampilkan datanya.                                                 ==> Done
-3. Perbaiki kekeliruan dalam menampilkan datanya. Baca kembali soalnya.             ==> Not Done
+3. Perbaiki kekeliruan dalam menampilkan datanya. Baca kembali soalnya.             ==> Done
 */

@@ -72,13 +72,13 @@ void inputNPM(int index){
 
 // fungsi inputan
 void inputData(){
-    cout<<"Pembayaran ke-"<<i+1<<endl;
+    cout<<"PEMBAYARAN KE-"<<i+1<<endl;
     cout<<"Masukkan No. Rekening [0 = exit]\t: ";
     cin>>norek[i];                                                                  // Menginput nomer rekening
     
     while (norek[i] != 0){
-        cout<<"Masukkan Nama\t\t\t: "; cin>>nama[i];                                  // Menginput nama
-        cout<<"Masukkan Alamat\t\t\t: "; cin>>alamat[i];                              // Menginput alamat
+        cout<<"Masukkan Nama\t\t\t\t: "; cin>>nama[i];                              // Menginput nama
+        cout<<"Masukkan Alamat\t\t\t\t: "; cin>>alamat[i];                          // Menginput alamat
         inputGolmet(i);                                                             // Pemanggilan fungsi untuk menginput golongan meter
         inputNPM(i);                                                                // Pemanggilan fungsi untuk menginput nilai penunjuk meter awal dan akhir
         jmlPemakai[i] = npmAkhir[i] - npmAwal[i];                                   // Penentukan jumlah pemakai
@@ -97,26 +97,43 @@ void inputData(){
             tp[i] = bp[i] + bbC;
         }
 
+        cout<<"Total Pembayaran adalah\t\t\t: Rp."<<tp[i]<<endl<<endl;              // Menampilkan total pembayaran
         gtp += tp[i];                                                               // Menambahkan jumlah Grand Total Pembayaran dari totdal sebelumnya
         i++;                                                                        // Increment i
-        cout<<"Total Pembayaran adalah\t\t: "<<tp[i]<<endl<<endl;                               // Menampilkan total pembayaran
         inputData();                                                                // Rekursif. Memanggil kembali untuk input data selanjutnya
     }
+}
+
+
+//fungsi menampilkan data
+void displayData(int index){
+    cout<<"\n\n========= Data Pelanggan Dengan Pemakaian 10 -50 =========\n\n";
+    while(j <= index){                                                              // Perulangan selama j masih lebih kecil atau sama dengan nilai indexnya
+        if(jmlPemakai[j] > 10 && jmlPemakai[j] < 50){                               // Penyeleksian untuk jumlah pemakaian di rentan 10 s/d 50
+            cout<<"PELANGGAN KE-"<<j+1<<endl;                             
+            cout<<"No. Rekening\t\t\t\t: "<<norek[j]<<endl;                         // Menampilkan nomer rekening
+            cout<<"Nama\t\t\t\t\t: "<<nama[j]<<endl;                                // Menampilkan Nama
+            cout<<"Alamat\t\t\t\t\t: "<<alamat[j]<<endl;                            // Menampilkan Alamatnya
+            cout<<"Jumlah Pemakaian\t\t\t: "<<jmlPemakai[j]<<endl<<endl;              // Menampilkan Jumlah pemakaiannya
+        }
+        j++;                                                                        // Increment j
+    }
+    cout<<"\n==> Grand Total Pembayaran adalah\t: Rp."<<gtp<<endl<<endl;;
 }
 
 
 // fungsi utama
 int main(){
     system("CLS");                                                                  // Membersihkan layar saat program dijalankan
-    cout<<"======= PROGRAM MENGHITUNG TOTAL PEMBAYARAN REKENING =======\n";
-    inputData();
-
+    cout<<"====== PROGRAM MENGHITUNG TOTAL PEMBAYARAN REKENING ======\n\n";
+    inputData();                                                                    // Memanggil fungsi input data
+    displayData(i);                                                                 // Memanggil fungsi menginput data
 }
 
 
 
 // PR
 /*
-1. Masih ada yang salah dengan Logikanya. Total Pembayaran tidak tanpul.
-2. Buat fungsi menampilkan datanya.
+1. Masih ada yang salah dengan Logikanya. Total Pembayaran tidak tanpul.            ==> Done
+2. Buat fungsi menampilkan datanya.                                                 ==> Done
 */

@@ -11,14 +11,14 @@ Buat program untuk menghitung total pembayaran rekening dengan proses sebagai be
         C                Rp. 20.000         Rp. 1.000
 - Jumlah pemakaian = Penunjukan Meter Akhir - Penunjukan Meter Awal
 - Biaya pemakaian diperoleh dari Jumlah Pemakaian * Tarif
-- Total pembayawan diperoleh dari Biaya Pemakaian + Biaya Beban
+- Total pembayaran diperoleh dari Biaya Pemakaian + Biaya Beban
 
 Alur Program
 - Pengimputa dilakukan untuk beberapa data pelanggan. Penginputan dihentikan jika No. Rekening diinput 0 (nol).
 - Validasi penginputan sebagai berikut:
     - Golongan Meter  -->  A/B/C
-    - Penunjukan Meter Akhir >= Penunjukan Meter Awal
-- Hasil perhitungan Tottal oembayawan ditampilkan pada setiap data yang siinput.
+    - Penunjukan Meter Akhir >= Penunjukan Meter Awal 
+- Hasil perhitungan Tottal pembayawan ditampilkan pada setiap data yang siinput.
 - Setelah penginputan berakhir, lakukan rekapitulasi (diluar loop penginputan data pelanggan) terhadap data pelanggan untuk memperoleh output berikut:
     - Jumlah pelanggan untuk masing-masing golongan meter.
     - Total jumlah pemakaian pada stiap golongan meter.
@@ -114,7 +114,7 @@ void displayData(int index){
             cout<<"No. Rekening\t\t\t\t: "<<norek[j]<<endl;                         // Menampilkan nomer rekening
             cout<<"Nama\t\t\t\t\t: "<<nama[j]<<endl;                                // Menampilkan Nama
             cout<<"Alamat\t\t\t\t\t: "<<alamat[j]<<endl;                            // Menampilkan Alamatnya
-            cout<<"Jumlah Pemakaian\t\t\t: "<<jmlPemakai[j]<<endl<<endl;              // Menampilkan Jumlah pemakaiannya
+            cout<<"Jumlah Pemakaian\t\t\t: "<<jmlPemakai[j]<<endl<<endl;            // Menampilkan Jumlah pemakaiannya
         }
         j++;                                                                        // Increment j
     }
@@ -134,6 +134,7 @@ int main(){
 
 // PR
 /*
-1. Masih ada yang salah dengan Logikanya. Total Pembayaran tidak tanpul.            ==> Done
+1. Masih ada yang salah dengan Logikanya. Total Pembayaran tidak tanpil.            ==> Done
 2. Buat fungsi menampilkan datanya.                                                 ==> Done
+3. Perbaiki kekeliruan dalam menampilkan datanya. Baca kembali soalnya.             ==> Not Done
 */

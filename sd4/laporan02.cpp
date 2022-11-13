@@ -48,7 +48,7 @@ int tarifA = 500, tarifB = 750, tarifC = 1000;
 
 // fungsi input golongan meter
 void inputGolmet(int index){
-    cout<<"Masukkan Golongan Meter [A, B, C]\t: "; cin>>golmet[i];                  // Menginput golongan meter
+    cout<<"Masukkan Golongan Meter [A, B, C]\t: "; cin>>golmet[index];              // Menginput golongan meter
     if(golmet[index] == 'A') jmlPelA++;                                             // Pengecekan golongan meter untuk mengincrementkan jumlah pelanggan
     else if(golmet[index] == 'B') jmlPelB++;    
     else if(golmet[index] == 'C') jmlPelC++;
@@ -76,7 +76,7 @@ void inputData(){
     cout<<"Masukkan No. Rekening [0 = exit]\t: ";
     cin>>norek[i];                                                                  // Menginput nomer rekening
     
-    while (norek[i] != 0){
+    if(norek[i] != 0){
         cout<<"Masukkan Nama\t\t\t\t: "; cin>>nama[i];                              // Menginput nama
         cout<<"Masukkan Alamat\t\t\t\t: "; cin>>alamat[i];                          // Menginput alamat
         inputGolmet(i);                                                             // Pemanggilan fungsi untuk menginput golongan meter
@@ -118,7 +118,7 @@ void displayData(int index){
     cout<<"Total Jumlah Pemakaian Golongan C\t: "<<tjpC<<endl;                      // Menampilkan Total Jumlah Pemakaian Golongan C
 
 
-    cout<<"\n\n========= Data Pelanggan Dengan Pemakaian 10 -50 =========\n\n";
+    cout<<"\n\n========= Data Pelanggan Dengan Pemakaian 10 - 50 ========\n\n";
     while(j <= index){                                                              // Perulangan selama j masih lebih kecil atau sama dengan nilai indexnya
         if(jmlPemakai[j] > 10 && jmlPemakai[j] < 50){                               // Penyeleksian untuk jumlah pemakaian di rentan 10 s/d 50
             cout<<"PELANGGAN KE-"<<j+1<<endl;                             

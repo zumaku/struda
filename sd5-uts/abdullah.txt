@@ -1,0 +1,41 @@
+#include <iostream>
+#include <string.h>
+using namespace std;
+
+struct address{
+    string provinsi;
+    string kabupaten;
+    string kecamatan;
+};
+
+struct mahasiswa{
+    string name;
+    string nim;
+    int age;
+    address alamat;
+};
+
+void showMahasiswa(mahasiswa abdullah){
+    cout<<"Data Mahasiswa.\n";
+    cout<<"Name:"<<abdullah.nama<<endl;
+    cout<<"NIM: "<<abdullah.nim<<endl;
+    cout<<"Age: "<<abdullah.umur<<endl;
+    cout<<"Provinsi: "<<abdullah.alamat.provinsi<<endl;
+    cout<<"Kabupaten: "<<abdullah.alamat.kabupaten<<endl;
+    cout<<"Kecamatan: "<<abdullah.alamat.kecamatan<<endl;
+}
+
+int main(){
+
+    mahasiswa abdullah;
+    abdullah.name = "Put your name here";
+    abdullah.nim = "Put your nin here";
+    abdullah.age = Put your age here;
+    abdullah.alamat.provinsi = "Put your name hof privince";
+    abdullah.alamat.kabupaten = "";
+    abdullah.alamat.kecamatan = "
+
+    showMahasiswa(mhs1);
+
+    return 0;
+}

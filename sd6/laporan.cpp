@@ -19,7 +19,7 @@ struct dtMhs{
 
 int main(){
     // Mendeklarasikan variabel untuk menyimpan jumlah mahasiswa dan nilai rata-rata
-    int jumlah, rata2;
+    int jumlah, rata2 = 0;
     dtMhs *ptrMhs, mhsMax, mhsMin;
 
     cout<<"Masukkan Jumlah Mahasiswa : "; cin>>jumlah;
@@ -54,7 +54,7 @@ int main(){
         }
 
         // Akumulasi nilai
-        rata2 += ptrMhs->nilai;
+        rata2 += ptrMhs[j].nilai;
         cout<<endl;
     }
 
@@ -80,7 +80,7 @@ int main(){
     cout<<"     Nim       : "<<mhsMin.nim<<endl;
     cout<<"     Nama      : "<<mhsMin.nama<<endl;
     cout<<"     Alamat    : "<<mhsMin.alamat<<endl;
-    cout<<"     Nilai     : "<<mhsMin.nilai<<endl;
+    cout<<"     Nilai     : "<<mhsMin.nilai<<enl;
     cout<<endl;
 
     rata2 = rata2/2;

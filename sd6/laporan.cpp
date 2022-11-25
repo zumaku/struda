@@ -33,7 +33,7 @@ int main(){
         cout<<"     Input Nim       : "; cin>>ptrMhs[j].nim;
         cout<<"     Input Nama      : "; cin>>ptrMhs[j].nama;
         cout<<"     Input Alamat    : "; cin>>ptrMhs[j].alamat;
-        cout<<"     Nilai           : "; cin>>ptrMhs[j].nilai;
+        cout<<"     Input Nilai           : "; cin>>ptrMhs[j].nilai;
         
         // Penyeleksian nilai minimal dan maksimal
         if(j == 0){

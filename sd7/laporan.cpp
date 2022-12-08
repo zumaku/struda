@@ -64,34 +64,30 @@ void sorting(){
 
 // fungsi menghapus nilai genap
 void delGenap(){
+    Angka *cur;
+    cur = new Angka;
+    cur->angka = 1;
+    cur->next = head;
+
     Angka *temp = head;
-    Angka *prev = head;
+    Angka *prev = cur;
 
     if(temp->angka == 0){   // ini untuk membuat node.angka yg isinya 0 (yaitu pada nide pertama(head)) menjadi 2, agar dapat dimodulus 2 pada line berikutnya
-        temp->angka = 2;
+        temp->angka = 1;    // Menyetel angka pada node pertama menjadi 1
     }
-
-    // while(temp->next != NULL){
-    //     if(temp->angka % 2 == 0){
-    //         prev->next = temp->next;
-    //         free(temp);
-    //         Angka *temp;
-    //         temp = prev->next;
-    //     } else{
-    //         prev = temp;
-    //         temp = temp->next;
-    //     }
-    // }
-
 
     // perulangan dibawah ini berhasil, tapi menampilkan hanya yang bernilai genap 
     while(temp->next != NULL){
-        if(temp->angka % 2 == 0){
+        if(temp->angka % 2 != 0){
+            if(i == 1){
+                temp->angka = 0;    // Mengembalikan nilai angka pada node pertama menjadi 0
+                i = 0;
+            }
             prev = temp;
             temp = temp->next;
         } else{
             prev->next = temp->next;
-            free(temp);
+            delete(temp);
             temp = prev->next;
         }
     }
@@ -103,7 +99,7 @@ int main(){
     int n;
 
     do{
-        cout<<"Masukkan angka: ";
+        cout<<"Masukkan angka [0 = selesai] : ";
         cin>>n;
         buatNode(n);
     } while(n != 0);

@@ -61,7 +61,7 @@ void quickSort(short data[], short kr, short kn){
 			temp=data[L];
 			data[L]=data[R];
 			data[R]=temp;
-			L++; R++;
+			L++; R--;
 		}
 	}
 	if(kr<R) quickSort(data, kr, R);
@@ -75,7 +75,7 @@ void cetak(short data[], short jml){
 	cout<<endl;
 }
 
-void main(){
+int main(){
 	short jml;
 	cout<<"Masukkan jumlah data : "; cin>>jml;
 	short *data = new short[jml];
@@ -88,7 +88,8 @@ void main(){
 	// bubbleSort(data, jml-1);
 	// insertionSort(data, jml-1);
 	// selectionSort(data, jml-1);
-	// untuk pemanggilan fungsi quck sortnya masih bingung ka
-	// quickSort(data, jml-1, jml-1);
-	cout<<"\Keadaan Urut : "; cetak(data, jml);
+	quickSort(data, 0, jml);
+	cout<<"\nKeadaan Urut : "; cetak(data, jml);
+
+    return 0;
 }
